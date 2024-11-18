@@ -6,12 +6,9 @@ install_all:
 
 .PHONY: initialize_certs
 initialize_certs:
-	mkcert auth.ocrolusexample.com localhost 127.0.0.1 ::1
-	mkcert www.ocrolusexample.com localhost 127.0.0.1 ::1
-	mv ./www.ocrolusexample.com+3-key.pem ./reverse-proxy/www.ocrolusexample.com+3-key.pem
-	mv ./www.ocrolusexample.com+3.pem ./reverse-proxy/www.ocrolusexample.com+3.pem
-	mv ./auth.ocrolusexample.com+3-key.pem ./reverse-proxy/auth.ocrolusexample.com+3-key.pem
-	mv ./auth.ocrolusexample.com+3.pem ./reverse-proxy/auth.ocrolusexample.com+3.pem
+    mkcert witty-wave-0c76eee0f.5.azurestaticapps.net localhost 127.0.0.1 ::1
+    mv ./witty-wave-0c76eee0f.5.azurestaticapps.net+3-key.pem ./reverse-proxy/witty-wave-0c76eee0f.5.azurestaticapps.net-key.pem
+    mv ./witty-wave-0c76eee0f.5.azurestaticapps.net+3.pem ./reverse-proxy/witty-wave-0c76eee0f.5.azurestaticapps.net.pem
 
 .PHONY: initialize_reverse_proxy
 initialize_reverse_proxy:
@@ -26,11 +23,6 @@ run_all:
 .PHONY: run_node
 run_node:
 	node ./node/index.js
-
-.PHONY: run_php
-run_php:
-	composer install --working-dir=php
-	php -S localhost:8000 -t public
 
 .PHONY: run_frontend
 run_frontend:

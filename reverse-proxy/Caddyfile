@@ -1,8 +1,4 @@
-www.ocrolusexample.com {
-	tls www.ocrolusexample.com+3.pem www.ocrolusexample.com+3-key.pem
-	reverse_proxy frontend:3000
-}
-auth.ocrolusexample.com {
-	tls auth.ocrolusexample.com+3.pem auth.ocrolusexample.com+3-key.pem
-	reverse_proxy node:8000
+https://witty-wave-0c76eee0f.5.azurestaticapps.net {
+    reverse_proxy localhost:3000
+    tls /path/to/reverse-proxy/witty-wave-0c76eee0f.5.azurestaticapps.net.pem /path/to/reverse-proxy/witty-wave-0c76eee0f.5.azurestaticapps.net-key.pem
 }
