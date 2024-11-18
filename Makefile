@@ -6,10 +6,10 @@ install_all:
 
 .PHONY: initialize_certs
 initialize_certs:
-    mkcert witty-wave-0c76eee0f.5.azurestaticapps.net localhost 127.0.0.1 ::1
-    mv ./witty-wave-0c76eee0f.5.azurestaticapps.net+3-key.pem ./reverse-proxy/witty-wave-0c76eee0f.5.azurestaticapps.net-key.pem
-    mv ./witty-wave-0c76eee0f.5.azurestaticapps.net+3.pem ./reverse-proxy/witty-wave-0c76eee0f.5.azurestaticapps.net.pem
-
+	mkcert witty-wave-0c76eee0f.5.azurestaticapps.net localhost 127.0.0.1 ::1
+	mv witty-wave-0c76eee0f.5.azurestaticapps.net+3-key.pem ./reverse-proxy/witty-wave-0c76eee0f.5.azurestaticapps.net-key.pem
+	mv witty-wave-0c76eee0f.5.azurestaticapps.net+3.pem ./reverse-proxy/witty-wave-0c76eee0f.5.azurestaticapps.net.pem
+	
 .PHONY: initialize_reverse_proxy
 initialize_reverse_proxy:
 	sudo caddy run --config ./reverse-proxy/Caddyfile
